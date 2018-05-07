@@ -1,0 +1,9 @@
+Modificar adps2 (mirar diapositivas)
+
+ADCSRA = (1 << ADEN ) + (1 << ADPS2) //Obvio el resto
+		//ACTIVO CONVERSION				//DIVISOR DE RELJO EN 16 (PAG 8)
+--Conversion ajustada a la izquierda
+
+ADMUX = (1 << REFS0)  //vOLTAJE EXTERNO)+ (1 << ADLAR)
+										// CON 1 ACTIVO DESPL IZQ
+										//CON 0 A LA DERECHA
