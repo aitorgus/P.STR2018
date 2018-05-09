@@ -144,11 +144,11 @@ void digitalWrite(unsigned char data) {
   ce:	99 0f       	add	r25, r25
   d0:	92 2b       	or	r25, r18
   d2:	9b b9       	out	0x0b, r25	; 11
-	PORTD |= (0b00100000 & data)>>1  ;
+	PORTD |= (0b00100000 & data)<<1  ;
   d4:	2b b1       	in	r18, 0x0b	; 11
   d6:	98 2f       	mov	r25, r24
   d8:	90 72       	andi	r25, 0x20	; 32
-  da:	96 95       	lsr	r25
+  da:	99 0f       	add	r25, r25
   dc:	92 2b       	or	r25, r18
   de:	9b b9       	out	0x0b, r25	; 11
 	PORTC = (0b01000000 & data)>>2 ;
@@ -366,7 +366,12 @@ int main(void)
 	PCMSK2=(1<<PCINT18) ;//BOTON PD2 (PÁGINA 9)
  232:	84 e0       	ldi	r24, 0x04	; 4
  234:	80 93 6d 00 	sts	0x006D, r24	; 0x80006d <__TEXT_REGION_LENGTH__+0x7e006d>
-	digitalWrite(0);//Ponemos a 0 los leds
+	//El mas es una disyunción
+	
+	//PCMSK2 lo usamos para el puerto D2.
+
+	
+	digitalWrite(0x00);//Ponemos a 0 los leds
  238:	80 e0       	ldi	r24, 0x00	; 0
  23a:	0e 94 4f 00 	call	0x9e	; 0x9e <digitalWrite>
 	

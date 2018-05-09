@@ -35,7 +35,7 @@ void digitalWrite(unsigned char data) {
 	PORTB |= (0b00000100 & data)>>2 ; //Esta en la posicion 2 (HAY QUE DESPLAZARLO 2 A LA DERECHA PARA QUE SE UBIQUE EN EL 0)
 	PORTD = (0b00001000 & data)<<4 ; //Estamos la posicion 3 y queremos llegar a PD7 (DESPLAZO 4 POSICIONES)
 	PORTD |= (0b00010000 & data)<<1   ; //Estamos en posicion 4 y queremos llegar pd5 (desplazo 1)
-	PORTD |= (0b00100000 & data)>>1  ;
+	PORTD |= (0b00100000 & data)<<1  ;
 	PORTC = (0b01000000 & data)>>2 ;
 	PORTC |= (0b1000000 & data)>>4 ;
 }
@@ -94,7 +94,7 @@ int main(void)
 	//PCMSK2 lo usamos para el puerto D2.
 
 	
-	digitalWrite(0);//Ponemos a 0 los leds
+	digitalWrite(0x00);//Ponemos a 0 los leds
 	
 	sei(); //Las habilito de nuevo
 	while (1)
