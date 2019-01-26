@@ -1,7 +1,7 @@
  /*
 ==========================================================================================================
  Name        : Implementación de una Calculadora Simple
- Author      : Aitor Gustavo Camacho Gutiérrez
+ Author      : 
  Version     :
  Asignatura  : SISTEMA TIEMPO REAL
  Description : En esta práctica vamos a implementar una calculadora básica de operaciones binarias. 	
