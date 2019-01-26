@@ -2,11 +2,11 @@
  * LedsADC3.c
  *
  * Created: 27/04/2018 12:03:15
- * Author : Aitor Gustavo Camacho Gutiérrez
+ * Author : 
  */ 
 //Seminario 2. Parte 1. Ejercicio 3
 
-//Escribe una función void digitalWrite() que muestre por los leds
+//Escribe una funciÃ³n void digitalWrite() que muestre por los leds
 //el valor binario de data 
 #include <avr/io.h>
 
